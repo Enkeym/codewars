@@ -8,7 +8,7 @@
 
 console.log(factorial(5)) */
 
-/* function fibonacci(n) {
+function fibonacci(n) {
   // Базовые случаи: fib(0) = 0, fib(1) = 1
   if (n === 0) {
     return 0
@@ -22,27 +22,4 @@ console.log(factorial(5)) */
 }
 
 // Пример использования
-console.log(fibonacci(6)) */
-
-//Обход дерева
-class TreeNode {
-  constructor(value) {
-    this.value = value
-    this.children = []
-  }
-}
-
-function traverseTree(node) {
-  console.log(node.value)
-  for (let child of node.children) {
-    traverseTree(child)
-  }
-}
-
-let root = new TreeNode(1)
-root.children.push(new TreeNode(2))
-root.children.push(new TreeNode(3))
-root.children[0].children.push(new TreeNode(4))
-root.children[0].children.push(new TreeNode(5))
-
-traverseTree(root)
+console.log(fibonacci(6))

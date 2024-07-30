@@ -73,3 +73,39 @@ let mergeTwoLists = function (list1, list2) {
     return list2
   }
 }
+
+class TreeNode {
+  constructor(val, next = null) {
+    this.val = val
+    this.next = next
+  }
+}
+
+function createLinkedList(arr) {
+  let dummy = new TreeNode(0)
+  let current = dummy
+
+  for (val of arr) {
+    current.next = new TreeNode(val)
+    current = current.next
+  }
+
+  return dummy.next
+}
+
+function printLinkedList(head) {
+  let result = []
+
+  while (head) {
+    result.push(head.val)
+    head = head.next
+  }
+
+  console.log(result.join(' -> '))
+}
+
+let list1 = createLinkedList([1, 3, 5])
+let list2 = createLinkedList([2, 4, 6])
+
+let mergedList = mergeTwoLists(list1, list2)
+printLinkedList(mergedList)

@@ -31,20 +31,24 @@
 
 class TreeNode {
   constructor(val, left, right) {
-    this.val = (val === undefined ? 0 : val);
-    this.left = (left === undefined ? null : left);
-    this.right = (right === undefined ? null : right);
+    this.val = val === undefined ? 0 : val
+    this.left = left === undefined ? null : left
+    this.right = right === undefined ? null : right
   }
 }
 
 function inorderTraversal(root) {
-  const result = [];
+  const result = []
   function traverse(node) {
-      if (node === null) return;
-      traverse(node.left);
-      result.push(node.val);
-      traverse(node.right);
+    if (node === null) return
+    traverse(node.left)
+    result.push(node.val)
+    traverse(node.right)
   }
-  traverse(root);
-  return result;
+  traverse(root)
+  return result
 }
+
+const root1 = new TreeNode(1, null, new TreeNode(2, new TreeNode(3)))
+
+console.log(inorderTraversal(root1))
